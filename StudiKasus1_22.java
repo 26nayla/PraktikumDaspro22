@@ -13,6 +13,35 @@ import java.util.Scanner;
         jumlahCup = sc.nextInt();
         System.out.println("Masukkan uang bayar:");
         uangBayar = sc.nextInt();
+        System.out.println("Masukkan total harga:");
+        totalHarga = sc.nextInt();
+        System.out.println("Masukkan diskon:");
+        diskon = sc.nextInt();
+        System.out.println("Masukkan total bayar:");
+        totalBayar = sc.nextInt();
+
+        totalHarga = jumlahCup * hargaPerCup;
+        diskon = 0;
+
+        if (totalHarga >= 100000) {
+            diskon = totalHarga * 10 / 100;
+        }
+
+        totalBayar = totalHarga - diskon;
+
+        System.out.println("Total harga        : Rp " + totalHarga);
+        System.out.println("Diskon             : Rp " + diskon);
+        System.out.println("Total bayar        : Rp " + totalBayar);
+
+        if (uangBayar >= totalBayar) {
+            kembalian = uangBayar - totalBayar;
+            System.out.println("Kembalian          : Rp " + kembalian);
+        } else {
+            kurang = totalBayar - uangBayar;
+            System.out.println("Uang tidak cukup, kurang Rp " + kurang);
+        }
+        
+        sc.close();
        
     }
  }
